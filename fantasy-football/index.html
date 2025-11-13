@@ -7,13 +7,14 @@
     <title>Fontasy Football</title>
 </head>
 <body>
-    <section class="containerGlobal">
+    
     <header class="header">
         <h1>Fantasy Football GenV</h1>
         <button class="btn-ajout" id="ajouterBtn">Ajouter un joueur</button>
     </header>
+    <section class="containerGlobal">
     <aside class="containerListJoueur" id="containerListJoueur">
-        <!-- <div class="cardJoueur">
+        <div class="cardJoueur">
             <div >
                 <img  class="imageProfile" src="images/image1.jpg" alt="image profile">
             </div>
@@ -27,9 +28,9 @@
             </div>
             <div>
                 <span class="icon">
-                    <i class="fa fas-pen"></i>dd</span>
+                    <i class="fa-solid fa-plus"></i>
             </div>
-        </div> -->
+        </div>
 
     </aside>
     <main class="mainComposition">
@@ -51,6 +52,7 @@
             <div>attack3</div>
         </div>
     </main>
+    </section>
     <footer class="footer">
         <div class="budget">
             <h4>Budget restant: $</h4>
@@ -81,10 +83,14 @@
                 <input type="text" placeholder="Entrer le prix du joueur" id="inputPrixJoueur" name="prix">
                 <label for="inputPhotoJoueur">Photo</label>
                 <input type="text" placeholder="Entrer l'url photo du joueur" id="inputPhotoJoueur" name="photo">
+                <!-- <span>Upload a file</span> -->
+                <!-- <input id="file-upload" type="file" name="photo" class="sr-only" /> -->
+                
             </form>
             <button type="submit" class="EnregistrerBtn" id="EnregistrerBtn">Ajouter</button>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/a680a19743.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
 </body>
 </html>

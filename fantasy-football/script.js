@@ -7,17 +7,25 @@ const EnregistrerBtn = document.getElementById("EnregistrerBtn");
 let playerList = [];
 
 
+
 async function loadDataJoueur(){
     let dataJoueur = await fetch("joueur.json");
     joueurs = await dataJoueur.json();
-    // console.log(joueurs);
+    localStorage.setItem("jouersList", joueurs)
+    localStorage.getItem("jouersList");
+    console.log(localStorage.getItem("jouersList"));
 }
 
-loadDataJoueur().then(()=>{
-    ajouterCardJoueur(joueurs);
-})
+getJoueurFromStorage();
+
+ajouterCardJoueur(joueurs);
+
+// loadDataJoueur().then(()=>{
+//     ajouterCardJoueur(joueurs);
+// })
 
 // fonction qui ajoute un joueur au aside des joueurs
+
 function ajouterCardJoueur(joueurs){
     containerListJoueur.innerHTML = joueurs.map((joueur) =>
         `
@@ -35,32 +43,30 @@ function ajouterCardJoueur(joueurs){
             </div>
             <div>
                 <span class="icon">
-                    <i class="fa fas-pen"></i>dd</span>
+                    <i class="fa-solid fa-plus"></i>
             </div>
         </div>
         `).join("");
 }
+
 //  afficher et annuler le modal 
+
 ajouterBtn.addEventListener("click", ()=>{
     modalContainer.classList.add("afficherModal");
 })
+
 EnregistrerBtn.addEventListener("click", ()=>{
     modalContainer.classList.remove("afficherModal");
 
     validerForm();
 })
 
-// validation du formulaire
-let inputNomJoueur =document.getElementById("inputNomJoueur");
-let inputNasJoueur =document.getElementById("inputNasJoueur");
-let inputPrixJoueur =document.getElementById("inputPrixJoueur");
-let inputPhotoJoueur =document.getElementById("inputPhotoJoueur");
-
+// form validation 
 
 function validerForm(){
-    // event.preventDefault();
-    let form = document.forms["formAjout"];
 
+    let form = document.forms["formAjout"];
+    
     let player = {
         nomComplet : form.nom.value,
         post : form.poste.value,
@@ -79,39 +85,55 @@ function validerForm(){
             console.log("error de validation")
             return
         }
-    playerList.push(player);
+    joueurs.push(player);
+
     //ajouter la liste au localstorage
-    localStorage.setItem("playerList", JSON.stringify(playerList));
-    let localStoragePlayers= localStorage.getItem("playerList")
-    let players = JSON.parse(localStoragePlayers);
-    
-    ajouterCardJoueur(players);
+    // pour que la local storage connue la listes des joueurs nous transformant la liste a une string en utilisant JSON.stringify(listNom)
 
-}
+    storageJoueurs()
 
-function checkText (texte) {
+    ajouterCardJoueur(joueurs);
 
-    if (texte == "") return false;
+    }
+    // ============== storage function ============//
+    function storageJoueurs(){
+        let joueurStirng = JSON.stringify(joueurs);
+        localStorage.setItem("joueurs", joueurStirng);
+    }
+    function getJoueurFromStorage(){
+        let listJoueurs = JSON.parse(localStorage.getItem("joueurs"));
+        // if(listJoueurs == null)
+        //     joueurs = [];
+        // else
+        //     joueurs = listJoueurs;
+        joueurs = listJoueurs ?? [];
 
-    if (texte == null) return false;
+    }
+    // ============== storage function ============//
 
-    let regexTexte = /^[a-z ,.'-]+$/i
+    function checkText (texte) {
 
-    if(!regexTexte.test(texte)) return false; 
+        if (texte == "") return false;
 
-    return true;
-}
+        if (texte == null) return false;
 
-function checkFloat(numberFloat) {
+        let regexTexte = /^[a-z ,.'-]+$/i
 
-    let regexMoney = /^(\$?\d{1,3}(?:,?\d{3})*(?:\.\d{2})?|\.\d{2})?$/
+        if(!regexTexte.test(texte)) return false; 
 
-    if (numberFloat <= 0 ) return false;
-    if (numberFloat == null) return false;
-    if (!regexMoney.test(numberFloat)) return false;
+        return true;
+    }
 
-    return true;
-}
-// EnregistrerBtn.addEventListener("submit", validerForm());
+    function checkFloat(numberFloat) {
+
+        let regexMoney = /^(\$?\d{1,3}(?:,?\d{3})*(?:\.\d{2})?|\.\d{2})?$/
+
+        if (numberFloat <= 0 ) return false;
+        if (numberFloat == null) return false;
+        if (!regexMoney.test(numberFloat)) return false;
+
+        return true;
+    }
+
 
 
