@@ -156,9 +156,9 @@ body{
     width:100%;
     height: 100%;
     background: #b09d9d86;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     opacity: 0;
     pointer-events: none;
     position: absolute;
@@ -170,7 +170,10 @@ body{
     pointer-events: auto;
 }
 .modal{
-    width: 30%;
+    position: relative;
+    top: 10%;
+    left: 25%;
+    width: 50%;
     height: 50%;
     background-color: aqua;
     display: flex;
