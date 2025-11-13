@@ -1,0 +1,30 @@
+[
+    {
+        "nomComplet" : "Mohammed Ait Hammad",
+        "post" : "Gardien",
+        "nationalite" : "Marocain",
+        "prix" : "5",
+        "photo" : "./images/image1.jpg"
+    },
+    {
+        "nomComplet" : "walid Ait Hammad",
+        "post" : "Défonsuer",
+        "nationalite" : "canadien",
+        "prix" : "10",
+        "photo" : "./images/image2.jpg"
+    },
+    {
+        "nomComplet" : "Mohammed Ait Hammad",
+        "post" : "Gardien",
+        "nationalite" : "Marocain",
+        "prix" : "5",
+        "photo" : "./images/image1.jpg"
+    },
+    {
+        "nomComplet" : "walid Ait Hammad",
+        "post" : "Défonsuer",
+        "nationalite" : "canadien",
+        "prix" : "10",
+        "photo" : "./images/image2.jpg"
+    }
+]

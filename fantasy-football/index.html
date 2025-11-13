@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fontasy Football</title>
+</head>
+<body>
+    <section class="containerGlobal">
+    <header class="header">
+        <h1>Fantasy Football GenV</h1>
+        <button class="btn-ajout" id="ajouterBtn">Ajouter un joueur</button>
+    </header>
+    <aside class="containerListJoueur" id="containerListJoueur">
+        <!-- <div class="cardJoueur">
+            <div >
+                <img  class="imageProfile" src="images/image1.jpg" alt="image profile">
+            </div>
+            <div class="infoJ">
+            <h2 class="nomJoueur">Nom Complet</h2>
+            <div class="infoJoueur">
+                <p class="post">Nationalite</p>
+                <p class="post">post</p>
+                <p class="prix">prix</p>
+            </div>
+            </div>
+            <div>
+                <span class="icon">
+                    <i class="fa fas-pen"></i>dd</span>
+            </div>
+        </div> -->
+
+    </aside>
+    <main class="mainComposition">
+        <div class="gardien">Gradient</div>
+        <div class="defanceur">
+            <div>def1</div>
+            <div>def2</div>
+            <div>def3</div>
+            <div>def4</div>
+        </div>
+        <div class="milieu">
+            <div>milieu1</div>
+            <div>milieur2</div>
+            <div>milieu3</div>
+        </div>
+        <div class="atackeur">
+            <div>attack1</div>
+            <div>attackr2</div>
+            <div>attack3</div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="budget">
+            <h4>Budget restant: $</h4>
+        </div>
+
+        <button class="reinitialiseBtn">reinitialiser</button>
+
+
+    </footer> 
+    </section>
+    <div class="modalContainer" id="modalContainer">
+        <div class="modal">
+            <h4 class="titreModal">Ajouter un joueur</h4>
+            <form name="formAjout" id="formAjout" class="formAjout">
+                <label for="inputNomJoueur" id="nomJoueur">Nom Complet</label>
+                <input type="text" placeholder="Entrer le nom du joueur" id="inputNomJoueur" name="nom">
+                <!-- <span>ff</span> -->
+                <label for="postSelect">Post</label>
+                <select name="poste" id="postSelect">
+                    <option value="gardien">Gardien</option>
+                    <option value="defenseur">Défenseur</option>
+                    <option value="milieu">Milieu</option>
+                    <option value="attaquant">Attaquant</option>
+                </select>
+                <label for="inputNasJoueur">Nationnalité</label>
+                <input type="text"  placeholder="Entrer la nationnalite du joueur" id="inputNasJoueur" name="nationalite">
+                <label for="inputPrixJoueur">Prix</label>
+                <input type="text" placeholder="Entrer le prix du joueur" id="inputPrixJoueur" name="prix">
+                <label for="inputPhotoJoueur">Photo</label>
+                <input type="text" placeholder="Entrer l'url photo du joueur" id="inputPhotoJoueur" name="photo">
+            </form>
+            <button type="submit" class="EnregistrerBtn" id="EnregistrerBtn">Ajouter</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
